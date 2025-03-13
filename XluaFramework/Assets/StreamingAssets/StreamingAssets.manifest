@@ -1,7 +1,7 @@
 ManifestFileVersion: 0
-CRC: 1106960800
+CRC: 4036045344
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: ui/canvas.prefab.ab
+      Name: ui/prefabs/canvas.prefab.ab
       Dependencies: {}

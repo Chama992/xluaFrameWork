@@ -1,7 +1,10 @@
 ManifestFileVersion: 0
-CRC: 4036045344
+CRC: 168568694
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
+      Name: luascripts/main.bytes.ab
+      Dependencies: {}
+    Info_1:
       Name: ui/prefabs/canvas.prefab.ab
       Dependencies: {}

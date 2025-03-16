@@ -1,0 +1,5 @@
+function Main()
+    print("hello i am lua")
+end
+
+Main()

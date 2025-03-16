@@ -1,1 +1,2 @@
+Assets/BuildResources/LuaScripts/main.bytes|luascripts/main.bytes.ab
 Assets/BuildResources/UI/Prefabs/Canvas.prefab|ui/prefabs/canvas.prefab.ab

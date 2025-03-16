@@ -37,6 +37,7 @@ public class BundleBuild : Editor
                 continue;
             }
             Debug.Log(files[i]);
+            
             AssetBundleBuild assetBundle = new AssetBundleBuild();
             
             string fileName = PathUtil.GetStandardPath(files[i]);//获取完整路径
@@ -55,13 +56,13 @@ public class BundleBuild : Editor
             buildInfos.Add(buildInfo);
         }
         
-        if (Directory.Exists(PathUtil.BundleOutPath))
+        if (Directory.Exists(PathUtil.BundleOutPath))//打包前先清空
         {
             Directory.Delete(PathUtil.BundleOutPath, true);
         }
         Directory.CreateDirectory(PathUtil.BundleOutPath);
         File.WriteAllLines(PathUtil.BundleOutPath+ "/" + AppConst.FileListName,buildInfos);
-        BuildPipeline.BuildAssetBundles(PathUtil.BundleOutPath,assetBundleBuilds.ToArray(), BuildAssetBundleOptions.None,buildTarget);
+        BuildPipeline.BuildAssetBundles(PathUtil.BundleOutPath,assetBundleBuilds.ToArray(), BuildAssetBundleOptions.None,buildTarget);//打包
         AssetDatabase.Refresh();
     }
 

@@ -1,5 +1,14 @@
+Manager = CS.Manager
+local group = 
+{
+    "Main",
+    "Second",
+    "Third",
+}
+Manager.LuaUIManager:SetUIGroup(group)
 function Main()
     print("hello i am lua")
+    Manager.LuaUIManager:OpenUI("Canvas","Main","ui.TestUI")
 end
 
 Main()

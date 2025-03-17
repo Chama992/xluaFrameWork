@@ -1,0 +1,20 @@
+function OnInit()
+    print("OnInit lua")
+end
+
+function OnUpdate()
+    print("OnUpdate lua")
+end
+
+function OnDestroy()
+    print("OnDestroy lua")
+end
+
+
+function OnOpen()
+    print("OnOpen lua")
+end
+
+function OnClose()
+    print("OnClose lua")
+end

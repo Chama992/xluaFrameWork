@@ -10,10 +10,10 @@ public class GameStart : MonoBehaviour
     {
         AppConst.GameMode = this.GameMode;
         DontDestroyOnLoad(this.gameObject);
-        HotUpdateManager.ResourcesManager.ParseVersionFile();
-        HotUpdateManager.LuaManager.Init(() =>
+        Manager.ResourcesManager.ParseVersionFile();
+        Manager.LuaManager.Init(() =>
         {
-            HotUpdateManager.LuaManager.StartLua("main");
+            Manager.LuaManager.StartLua("main");
         });
         
     }

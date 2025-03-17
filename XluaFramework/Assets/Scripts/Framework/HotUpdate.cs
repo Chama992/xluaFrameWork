@@ -127,8 +127,8 @@ public class HotUpdate : MonoBehaviour
     /// </summary>
     private void EnterGame()
     {
-        HotUpdateManager.ResourcesManager.ParseVersionFile();
-        HotUpdateManager.ResourcesManager.LoadUI("Canvas",OnLoadComplete);
+        Manager.ResourcesManager.ParseVersionFile();
+        Manager.ResourcesManager.LoadUI("Canvas",OnLoadComplete);
     }
     
     private void OnLoadComplete(Object obj)

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class HotUpdateManager : MonoBehaviour
+public class Manager : MonoBehaviour
 {
   private static ResourcesManager resourcesManager;
   private static LuaManager luaManager;
@@ -19,9 +19,20 @@ public class HotUpdateManager : MonoBehaviour
       return luaManager;
     }
   }
+
+  private static LuaUIManager luaUIManager;
+  public  static LuaUIManager LuaUIManager
+  {
+    get
+    {
+      return luaUIManager;
+    }
+  }
+  
   private void Awake()
   {
     resourcesManager = this.gameObject.AddComponent<ResourcesManager>();
     luaManager = this.gameObject.AddComponent<LuaManager>();
+    luaUIManager = this.gameObject.AddComponent<LuaUIManager>();
   }
 }

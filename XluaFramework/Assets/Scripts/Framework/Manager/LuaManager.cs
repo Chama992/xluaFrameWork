@@ -35,12 +35,11 @@ public class LuaManager : MonoBehaviour
         if (AppConst.GameMode == GameMode.EditorMode)
         {
             EditorLoadLuaScripts();
+            return;
         }
         else
 #endif     
             LoadLuaScripts();
-        
-        
     }
     /// <summary>
     /// lua调用
@@ -65,7 +64,7 @@ public class LuaManager : MonoBehaviour
     /// </summary>
     /// <param name="name"></param>
     /// <returns></returns>
-    private byte[] GetLuaScripts(string name)
+    public byte[] GetLuaScripts(string name)
     {
         name = name.Replace(".", "/");
         string fileName = PathUtil.GetLuaPath(name);
@@ -81,7 +80,7 @@ public class LuaManager : MonoBehaviour
     {
         foreach (var name in LuaNames)
         {
-            HotUpdateManager.ResourcesManager.LoadLua(name, (UnityEngine.Object o) =>
+            Manager.ResourcesManager.LoadLua(name, (UnityEngine.Object o) =>
             {
                 AddLuaScripts(name, (o as TextAsset).bytes);
                 if (LuaScripts.Count >= LuaNames.Count)
@@ -103,6 +102,7 @@ public class LuaManager : MonoBehaviour
             byte[] file = File.ReadAllBytes(fileName);
             AddLuaScripts(PathUtil.GetUnityPath(fileName), file);
         }
+        InitFinished?.Invoke();
     }
 #endif
     

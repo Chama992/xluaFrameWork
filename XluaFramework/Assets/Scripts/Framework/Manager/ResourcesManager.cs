@@ -45,7 +45,7 @@ public class ResourcesManager : MonoBehaviour
             Bundles.Add(bundleInfo.AssetName, bundleInfo);
             if (info[0].Contains("LuaScripts"))
             {
-                HotUpdateManager.LuaManager.LuaNames.Add(info[0]);
+                Manager.LuaManager.LuaNames.Add(info[0]);
             }
         }
     }
@@ -61,6 +61,7 @@ public class ResourcesManager : MonoBehaviour
         if (AppConst.GameMode == GameMode.EditorMode)
         {
             EditorLoadAsset(bundleAssetName,callback);
+            return;
         }
 #endif
         StartCoroutine(LoadBundlesAsync(bundleAssetName, callback));

@@ -26,7 +26,6 @@ public class LuaBehaviour : MonoBehaviour
     public virtual void InitLua(string luaName)
     {
         luaEnv.DoString(Manager.LuaManager.GetLuaScripts(luaName),luaName, ScriptEnv);
-        
         // ScriptEnv.Get("Awake",out LuaAwake);
         ScriptEnv.Get("OnInit",out LuaInit);
         ScriptEnv.Get("OnUpdate",out LuaUpdate);
@@ -51,8 +50,6 @@ public class LuaBehaviour : MonoBehaviour
         LuaOnDestroy?.Invoke();
         Clear();
     }
-    
-
     protected virtual void Clear()
     {
         // LuaAwake = null;

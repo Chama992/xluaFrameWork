@@ -86,7 +86,6 @@ public class ResourcesManager : MonoBehaviour
                 yield return LoadBundlesAsync(t);//递归加载所有依赖
             }
         }
-
         AssetBundleCreateRequest request = AssetBundle.LoadFromFileAsync(bundlePath);
         if (request.assetBundle == null)
         {
